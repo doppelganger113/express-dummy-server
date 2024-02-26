@@ -1,6 +1,5 @@
 import axios from "axios";
 import {createDummyServer, DummyServer, RequestSnapshot} from "./DummyServer";
-import * as repl from "repl";
 import {RequestHandler} from "express";
 
 enum DummyUserServiceHook {
@@ -54,7 +53,7 @@ describe('DummyServer', () => {
     it('should return a mocked dummy server response', async () => {
         hooks.set(DummyUserServiceHook.getUser, (req, res) => {
             const {id} = req.params;
-            res.json({id: Number(id), name: 'Hello Mike'})
+            res.json({id: Number(id), name: 'Hello Mike'});
         })
         const res = await axios.get(`${server.url}/users/2`);
         expect(res.data).toEqual({id: 2, name: 'Hello Mike'})

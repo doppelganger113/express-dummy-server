@@ -1,7 +1,8 @@
 import * as express from "express";
-import {Express, RequestHandler} from "express";
+import {Express} from "express";
 import {AddressInfo} from "net";
 import {DummyServerOptions} from "./DummyServerOptions";
+import {createResponseLogger} from "./response-logger-middleware";
 
 export interface RequestSnapshot {
     method: string;
@@ -15,55 +16,6 @@ export interface DummyServer {
     url: string;
     close: () => void
     requestStore: Map<string, RequestSnapshot[]>
-}
-
-const createResponseLogger = (options?: DummyServerOptions): RequestHandler => {
-    if (!options?.debug) {
-        return (req, res, next) => next();
-    }
-
-    const logger = options.logger || console;
-
-    return function logResponseBody(req, res, next) {
-        const oldWrite = res.write;
-        const oldEnd = res.end;
-
-        const chunks: any[] = [];
-
-        res.write = function (chunk) {
-            chunks.push(chunk);
-
-            // @ts-ignore
-            return oldWrite.apply(res, arguments);
-        };
-
-        // @ts-ignore
-        res.end = function (chunk) {
-            if (chunk)
-                chunks.push(chunk);
-
-            const body = Buffer.concat(chunks).toString('utf8');
-
-
-            let parsedBody = body;
-            try {
-                parsedBody = JSON.parse(body);
-            } catch (err) {
-            }
-
-            logger.debug(`[Response](${res.statusCode}) ${req.method} ${req.originalUrl}`, {
-                body: parsedBody,
-                headers: {
-                    ...res.getHeaders()
-                }
-            })
-
-            // @ts-ignore
-            oldEnd.apply(res, arguments);
-        };
-
-        next();
-    }
 }
 
 export const createDummyServer = async (
