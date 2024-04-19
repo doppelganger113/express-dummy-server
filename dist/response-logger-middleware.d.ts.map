@@ -1,0 +1,1 @@
+{"version":3,"file":"response-logger-middleware.d.ts","sourceRoot":"","sources":["../src/response-logger-middleware.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,kBAAkB,EAAE,MAAM,sBAAsB,CAAC;AAC1D,OAAO,EAAE,cAAc,EAAE,MAAM,SAAS,CAAC;AAEzC,eAAO,MAAM,oBAAoB,aAAc,kBAAkB,KAAG,cAkEnE,CAAC"}
