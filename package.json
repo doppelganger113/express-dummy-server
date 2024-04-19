@@ -1,6 +1,6 @@
 {
   "name": "express-dummy-server",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Dummy server used for integration testing built on top of express.js",
   "keywords": [
     "express",
