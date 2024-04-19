@@ -1,6 +1,6 @@
 {
   "branches": [
-    "master",
+    "main",
     "+([0-9])?(.{x([0-9]),x}).x"
   ],
   "plugins": [
