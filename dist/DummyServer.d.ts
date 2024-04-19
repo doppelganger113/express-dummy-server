@@ -1,5 +1,5 @@
-import { Express } from "express";
-import { DummyServerOptions } from "./DummyServerOptions";
+import { Express } from 'express';
+import { DummyServerOptions } from './DummyServerOptions';
 export interface RequestSnapshot {
     method: string;
     params: Record<string, unknown>;
@@ -13,4 +13,4 @@ export interface DummyServer {
     requestStore: Map<string, RequestSnapshot[]>;
 }
 export declare const createDummyServer: (registerEndpoints: (app: Express) => Promise<void>, options?: DummyServerOptions) => Promise<DummyServer>;
-//# sourceMappingURL=dummy-server.d.ts.map
+//# sourceMappingURL=DummyServer.d.ts.map

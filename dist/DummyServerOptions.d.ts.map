@@ -1,1 +1,1 @@
-{"version":3,"file":"DummyServerOptions.d.ts","sourceRoot":"","sources":["../src/DummyServerOptions.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,iBAAiB,EAAC,MAAM,qBAAqB,CAAC;AAEtD,MAAM,WAAW,kBAAkB;IAC/B,KAAK,CAAC,EAAE,OAAO,CAAC;IAChB,MAAM,CAAC,EAAE,iBAAiB,CAAC;CAC9B"}
+{"version":3,"file":"DummyServerOptions.d.ts","sourceRoot":"","sources":["../src/DummyServerOptions.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,iBAAiB,EAAE,MAAM,qBAAqB,CAAC;AAExD,MAAM,WAAW,kBAAkB;IACjC,KAAK,CAAC,EAAE,OAAO,CAAC;IAChB,MAAM,CAAC,EAAE,iBAAiB,CAAC;CAC5B"}
